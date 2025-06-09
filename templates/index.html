@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Song Recommender</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body, html {
+    height: 100%;
+    font-family: 'Poppins', sans-serif;
+    background: url("{{ url_for('static', filename='bg.jpg') }}") no-repeat center center fixed;
+    background-size: cover;
+    }
+
+    body {
+      color: #ffffff;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      background-color: rgba(30, 30, 30, 0.9);
+      padding: 1rem 2rem;
+      text-align: center;
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: #BB86FC;
+      letter-spacing: 1px;
+    }
+
+    .container {
+      max-width: 600px;
+      padding: 2rem;
+      background-color: rgba(30, 30, 30, 0.85);
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.4);
+      margin: auto;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #BB86FC;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      font-size: 1rem;
+      color: #cccccc;
+      margin-bottom: 2rem;
+    }
+
+    input[type="text"] {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      border: none;
+      border-radius: 5px;
+      font-size: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    button {
+      width: 100%;
+      padding: 0.75rem;
+      border: none;
+      border-radius: 5px;
+      background-color: #BB86FC;
+      color: #fff;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background-color: #9e6ee6;
+    }
+
+    .container + .container {
+    margin-top: 3rem;  /* Adjust the spacing between input and results */
+    }
+
+    .list-group-item {
+    background-color: #2c2c2c;
+    border: none;
+    color: #ffffff;
+    font-family: 'Poppins', sans-serif;
+    }
+
+    .list-group-item strong {
+    color: #BB86FC;
+    }
+
+    footer {
+      background-color: rgba(20, 20, 20, 0.9); /* black semi-transparent footer */
+      color: #aaaaaa;
+      text-align: center;
+      padding: 1rem 2rem;
+      font-size: 0.9rem;
+      width: 100%;
+    }
+
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    🎵 Song Recommender 🎵
+  </header>
+
+  <div class="container" style="margin-top: 3rem;">
+    <h1>Tunes Tailored for You</h1>
+    <p>Enter your favorite song and get personalized recommendations that vibe with your taste.</p>
+    <form action="/recommend" method="POST">
+      <input type="text" name="song_name" placeholder="Enter Song Name" required />
+      <button type="submit">Get Recommendations</button>
+    </form>
+  </div>
+
+  <div class="container my-5" style="margin-top: 3rem;">
+    {% if recommendations %}
+    <h2 class="text-center mt-5" style="color: #BB86FC;">Recommended Songs</h2>
+    <div class="table-container" style="overflow-x: auto;">
+      <table style="width: 100%; border-collapse: collapse; margin-top: 1.5rem; color: #ffffff;">
+        <thead style="background-color: #3a3a3a;">
+          <tr>
+            <th style="padding: 12px; text-align: center; color: #BB86FC;">Song Name</th>
+            <th style="padding: 12px; text-align: center; color: #BB86FC;">Artist</th>
+            <th style="padding: 12px; text-align: center; color: #BB86FC;">Release Year</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for song in recommendations %}
+          <tr style="border-bottom: 1px solid #444;">
+            <td style="padding: 10px;">{{ song.name }}</td>
+            <td style="padding: 10px;">{{ song.artists }}</td>
+            <td style="padding: 10px;">{{ song.year }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+    {% endif %}
+  </div>
+
+  <footer style="margin-top: 3rem;">
+    &copy; 2025 Song Recommender. All rights reserved. Crafted with love by Shefali Kaushal.
+  </footer>
+</body>
+</html>
