@@ -35,7 +35,7 @@ def get_song_recommendations(song_name, top_n=5):
     recommendations = recommendations[recommendations['name'].str.lower() != song_name.lower()]
 
     result_table = recommendations[['name', 'artists', 'year']].reset_index(drop=True)
-    result_table.columns = ['name', 'artists', 'year']  # keys for HTML access
+    result_table.columns = ['name', 'artists', 'year'] 
 
     return result_table.to_dict(orient="records")
 
