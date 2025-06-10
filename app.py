@@ -6,7 +6,7 @@ from sklearn.preprocessing import StandardScaler
 
 app=Flask(__name__)
 
-df=pd.read_csv("data.csv")
+df=pd.read_csv("clustered_df.csv")
 
 features = ['valence', 'acousticness', 'danceability', 'energy',
             'instrumentalness', 'liveness', 'loudness', 'speechiness', 'tempo']
