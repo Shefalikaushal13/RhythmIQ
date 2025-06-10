@@ -129,7 +129,7 @@
     <h1>Tunes Tailored for You</h1>
     <p>Enter your favorite song (pre-2021) and get personalized recommendations that vibe with your taste.</p>
     <form action="/recommend" method="POST">
-      <input type="text" name="song_name" placeholder="Enter Song Name" required />
+      <input type="text" name="song_name" placeholder="Enter Song Name" required value="{{ song_name }}" />
       <button type="submit">Get Recommendations</button>
     </form>
   </div>

@@ -48,6 +48,7 @@ def index():
 @app.route("/recommend", methods=['POST','GET'])
 def recommend():
     recommendations = []
+    song_name = ""
     if request.method == "POST":
         song_name = request.form.get("song_name")
         try:
@@ -56,7 +57,7 @@ def recommend():
                 recommendations = [{'name': 'Not Found', 'artists': 'N/A', 'year': 'N/A'}]
         except Exception as e:
             recommendations = [{'name': 'Error', 'artists': str(e), 'year': 'N/A'}]
-    return render_template("index.html", recommendations=recommendations)
+    return render_template("index.html", recommendations=recommendations,song_name=song_name)
 
 
 if __name__ == "__main__":    #app call
