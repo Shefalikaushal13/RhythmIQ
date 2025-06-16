@@ -58,7 +58,7 @@
 ---
 
 ## 🖥️ Demo
-- **Source**: [Live Link](https://rhythmiq-9h5k.onrender.com/)
+- **Source**: [Deployed Link](https://rhythmiq-9h5k.onrender.com/)
 - ![Screenshot 2025-06-10 102953](https://github.com/user-attachments/assets/38b5c3e9-4276-4e29-83e4-b7e2a745d8a2)
 - ![Screenshot 2025-06-10 104739](https://github.com/user-attachments/assets/4674a0cf-9cc6-4c41-b4cd-754e5348f3f3)
 
