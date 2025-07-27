@@ -67,5 +67,6 @@
 ---
 
 ## ✍️ Author
-Shefali Kaushal
-- [Linkedin](https://www.linkedin.com/in/shefalikaushal/)
+**Shefali Kaushal**   
+🔗 [LinkedIn](https://www.linkedin.com/in/shefalikaushal13)  
+🌐 [Peerlist](https://peerlist.io/shefalikaushal)
