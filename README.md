@@ -69,4 +69,5 @@
 ## ✍️ Author
 **Shefali Kaushal**   
 🔗 [LinkedIn](https://www.linkedin.com/in/shefalikaushal13)  
-🌐 [Peerlist](https://peerlist.io/shefalikaushal)
+🌐 [Portfolio](https://shefali-kaushal-portfolio.netlify.app/)
+💻 [Peerlist](https://peerlist.io/shefalikaushal)
